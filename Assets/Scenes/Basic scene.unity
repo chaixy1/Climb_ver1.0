@@ -15150,7 +15150,7 @@ GameObject:
   - component: {fileID: 1550507194}
   - component: {fileID: 1550507193}
   m_Layer: 0
-  m_Name: Vcam2
+  m_Name: VCam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
