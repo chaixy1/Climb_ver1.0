@@ -7269,7 +7269,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511907793}
-  m_LocalRotation: {x: 0.0023174128, y: 0.99655896, z: -0.07727709, w: 0.029885162}
+  m_LocalRotation: {x: 0.0023174153, y: 0.99655896, z: -0.07727709, w: 0.029885197}
   m_LocalPosition: {x: -49.55, y: 51.02, z: 12.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7720,12 +7720,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Clavicle_l'\n\tTransform 'hand_r'\n\tTransform
-    'middle_01_l'\n\tTransform 'calf_l'\n\tTransform 'lowerarm_l'\n\tTransform 'ball_l'\n\tTransform
-    'middle_02_r'\n\tTransform 'spine_01'\n\tTransform 'neck_01'\n\tTransform 'ring_02_l'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -18321,12 +18316,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Clavicle_l'\n\tTransform 'hand_r'\n\tTransform
-    'middle_01_l'\n\tTransform 'calf_l'\n\tTransform 'lowerarm_l'\n\tTransform 'ball_l'\n\tTransform
-    'middle_02_r'\n\tTransform 'spine_01'\n\tTransform 'neck_01'\n\tTransform 'ring_02_l'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -23282,7 +23272,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550507192}
-  m_LocalRotation: {x: -0.07205837, y: 0.8163258, z: -0.5634913, w: -0.10439046}
+  m_LocalRotation: {x: 0.0023174153, y: 0.99655896, z: -0.07727709, w: 0.029885197}
   m_LocalPosition: {x: -49.55, y: 51.02, z: 12.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -29989,12 +29979,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Clavicle_l'\n\tTransform 'hand_r'\n\tTransform
-    'middle_01_l'\n\tTransform 'calf_l'\n\tTransform 'lowerarm_l'\n\tTransform 'ball_l'\n\tTransform
-    'middle_02_r'\n\tTransform 'spine_01'\n\tTransform 'neck_01'\n\tTransform 'ring_02_l'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
