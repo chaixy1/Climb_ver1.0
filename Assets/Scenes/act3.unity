@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32636583, g: 0.2738403, b: 0.596071, a: 1}
+  m_IndirectSpecularColor: {r: 0.32641292, g: 0.27389812, b: 0.59614533, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13677,7 +13677,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1405471628}
   InitPlace: {x: 0, y: 0, z: 0}
   ArduinoControlledCounter: 1
-  portName: COM5
+  portName: COM3
   baudRate: 9600
   distanceThreshold: 0.1
   uiPanel: {fileID: 1545127671}

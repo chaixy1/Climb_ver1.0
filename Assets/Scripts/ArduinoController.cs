@@ -17,7 +17,7 @@ public class ArduinoController : MonoBehaviour
     private bool isClimbing = false;
 
     private SerialPort sp;
-    public string portName = "COM5"; // 串行端口名称
+    public string portName = "COM3"; // 串行端口名称
     public int baudRate = 9600; // 波特率
     public float distanceThreshold = 0.1f; // Arduino距离阈值
     private float previousDistance = 0f;
@@ -56,7 +56,7 @@ public class ArduinoController : MonoBehaviour
                             if (rb.velocity.y > 0 && !isClimbing)
                             {
                                 playerAnimator.SetBool("IsClimbing", true);
-                                
+
                                 isClimbing = true;
                             }
                         }
@@ -65,14 +65,14 @@ public class ArduinoController : MonoBehaviour
                             // if(isClimbing)
                             // {
                             //     playerAnimator.SetBool("IsClimbing",false);
-                                
+
                             //     isClimbing=false;
                             // }
                             //playerAnimator.SetBool("IsClimbing",false);
                         }
-                        
+
                         previousDistance = arduinoDistance;
-                        
+
                     }
 
                 }
@@ -93,7 +93,7 @@ public class ArduinoController : MonoBehaviour
             isJumping = false;
             isClimbing = false;
             playerAnimator.SetBool("IsClimbing", false);
-            
+
         }
     }
 
@@ -173,6 +173,6 @@ public class ArduinoController : MonoBehaviour
             sp.Close();
         }
     }
-    
-    
+
+
 }

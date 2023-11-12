@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 995406890}
-  m_IndirectSpecularColor: {r: 0.13081668, g: 0.20845215, b: 0.22425789, a: 1}
+  m_IndirectSpecularColor: {r: 0.13120493, g: 0.20887816, b: 0.22468233, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18378,7 +18378,7 @@ MonoBehaviour:
   moveSpeed: 10
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 4045601231826953}
-  portName: COM5
+  portName: COM3
   baudRate: 9600
   distanceThreshold: 0.1
   jumpForce: 5

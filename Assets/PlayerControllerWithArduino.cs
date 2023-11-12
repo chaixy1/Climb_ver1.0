@@ -23,8 +23,10 @@ public class PlayerControllerWithArduino : MonoBehaviour
     public int baudRate = 9600;
     public float distanceThreshold = 0.1f;
     private float previousDistance = 0f;
-
-    public GameObject uiPanel;
+public kinecttest kinectInput; // 在 Unity 编辑器中设置此引用
+public float bigger = 1.6f;
+   public GameObject uiPanel;
+   public GameObject KinectPlayer;
 
     void Start()
     {
@@ -34,8 +36,24 @@ public class PlayerControllerWithArduino : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //float horizontalInput = Input.GetAxis("Horizontal");
+        
+        // float horizontalInputRaw = kinectInput.GetHorizontalInput();
+        // float horizontalInput = horizontalInputRaw * bigger ;
+        
+
+          // 获取 KinectPlayer 的当前位置
+    Vector3 kinectPlayerPosition = KinectPlayer.transform.position;
+
+    // 计算相对于原点的水平偏移
+    float horizontalOffset = kinectPlayerPosition.x;
+
+    // 应用这个偏移来控制角色的移动
+    // 你可以根据需要调整偏移量的使用方式
+    float horizontalInput = horizontalOffset * bigger;
+    Debug.Log("horizontalInput: " + horizontalInput);
         Vector2 movement = new Vector2(-horizontalInput * moveSpeed, gravityForce.y);
+                
 
         if (canMoveVertically)
         {

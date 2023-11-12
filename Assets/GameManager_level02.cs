@@ -56,7 +56,7 @@ public class GameManager_level02 : MonoBehaviour
         //float spawnX = Random.Range(-46f, -53f);
         // 在指定的xyz区域内生成小方块
         float spawnX = Random.Range(-46f, -53f);
-        float spawnY = Random.Range(0f, 400f);
+        float spawnY = Random.Range(0f, 50f);
         float spawnZ = Random.Range(8.7f, 8.8f);
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, spawnZ);
 
