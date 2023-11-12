@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO.Ports;
 using System.IO;
 
-public class ArduinoController : MonoBehaviour
+public class ArduinoController_level02 : MonoBehaviour
 {
     public float moveSpeed = 10.0f; // 横向移动速度
     public float maxUpwardSpeed = 10.0f; // 最大向上速度
@@ -46,16 +46,19 @@ public class ArduinoController : MonoBehaviour
                     {
                         if (arduinoDistance < (previousDistance - distanceThreshold))
                         {
-                            rb.velocity = new Vector2(rb.velocity.x, maxUpwardSpeed);
-                            isJumping = true;
-                            playerAnimator.SetBool("IsClimbing", true);
+                            // rb.velocity = new Vector2(rb.velocity.x, maxUpwardSpeed);
+                            // isJumping = true;
+                            // playerAnimator.SetBool("IsClimbing", true);
 
-                            if (rb.velocity.y > 0 && !isClimbing)
-                            {
-                                playerAnimator.SetBool("IsClimbing", true);
+                            // if (rb.velocity.y > 0 && !isClimbing)
+                            // {
+                            //     playerAnimator.SetBool("IsClimbing", true);
                                 
-                                isClimbing = true;
-                            }
+                            //     isClimbing = true;
+                            // }
+                            
+                            playerController.canMoveVertically = false;
+                            playerController.JumpCoroutine();
                         }
                         else
                         {
@@ -105,40 +108,6 @@ public class ArduinoController : MonoBehaviour
             // 如果碰撞到 Cube，向后移动 5.0f
             rb.velocity = new Vector2(-5.0f, rb.velocity.y);
         }
-        else if (collision.gameObject.CompareTag("End"))
-        {
-            // 如果碰撞到 End，传送到指定位置
-            TeleportToDestination();
-
-        }
-    }
-
-    public Transform destinationTransform; // 通过Unity编辑器指定的目标位置
-
-    void TeleportToDestination()
-    {
-        // 在这里添加传送到指定位置的逻辑
-        // 例如，将当前物体的位置设置为目标位置
-        if (destinationTransform != null)
-        {
-            transform.position = destinationTransform.position;
-        }
-        playerAnimator.SetBool("Idle", true);
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-    }
-
-    Transform GetDestinationTransform()
-    {
-        // 在这里添加获取目标位置的逻辑
-        // 例如，通过目标物体的标签或名称来查找目标物体
-        GameObject destinationObject = GameObject.FindWithTag("DestinationObject");
-        if (destinationObject != null)
-        {
-            return destinationObject.transform;
-        }
-
-        // 如果找不到目标物体，可以返回null或执行其他逻辑
-        return null;
     }
 
     void OnApplicationQuit()
@@ -168,6 +137,4 @@ public class ArduinoController : MonoBehaviour
             sp.Close();
         }
     }
-    
-    
 }

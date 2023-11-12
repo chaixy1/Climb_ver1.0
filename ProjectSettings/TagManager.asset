@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - OnTop
+  - LightBlock
+  - GreyCube
+  - RedCube
+  - CinemachineTarget
+  - End
   layers:
   - Default
   - TransparentFX
