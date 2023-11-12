@@ -95,6 +95,7 @@ public class PlayerController_level03 : MonoBehaviour
     public int baudRate = 9600;
     public float distanceThreshold = 0.1f;
     private float previousDistance = 0f;
+    public GameObject uiPanel;
 
     void Start()
     {
@@ -163,7 +164,7 @@ public class PlayerController_level03 : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Check"))
         {
             canMoveVertically = false;
             //playerAnimator.SetBool("Dead", true);
@@ -174,16 +175,18 @@ public class PlayerController_level03 : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpCounter/3f, rb.velocity.z);
             StartCoroutine(ResetYVelocityAfterDelay(5));
             jumpCounter = 0; // 重置计数器
-        }
-        else if (collision.gameObject.CompareTag("OnTop"))
-        {
-            this.transform.position = InitPlace;
-            playerAnimator.SetBool("Idle", true);
+            Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("End"))
         {
             // 如果碰撞到 End，传送到指定位置
             TeleportToDestination();
+        }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            sp.Close();
+            playerAnimator.SetBool("Dead", true); // 假设"Dead"是播放着陆动画的触发器名
+            uiPanel.SetActive(true);
         }
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
 using System.IO;
+using UnityEngine.UI;
 
 public class ArduinoController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class ArduinoController : MonoBehaviour
     public float jumpForce = 5f;
 
     public PlayerController_level02 playerController;
+
+    public GameObject uiPanel;
 
     void Start()
     {
@@ -98,7 +101,9 @@ public class ArduinoController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            sp.Close();
             playerAnimator.SetBool("Dead", true); // 假设"Dead"是播放着陆动画的触发器名
+            uiPanel.SetActive(true);
         }
         else if (collision.gameObject.CompareTag("OnTop"))
         {

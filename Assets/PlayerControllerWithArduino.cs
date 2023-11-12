@@ -24,6 +24,8 @@ public class PlayerControllerWithArduino : MonoBehaviour
     public float distanceThreshold = 0.1f;
     private float previousDistance = 0f;
 
+    public GameObject uiPanel;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -178,6 +180,12 @@ public class PlayerControllerWithArduino : MonoBehaviour
         {
             // 如果碰撞到 End，传送到指定位置
             TeleportToDestination();
+        }
+        else if(collision.gameObject.CompareTag("Ground"))
+        {
+            sp.Close();
+            playerAnimator.SetBool("Dead", true); // 假设"Dead"是播放着陆动画的触发器名
+            uiPanel.SetActive(true);
         }
     }
 

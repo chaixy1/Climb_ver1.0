@@ -10,7 +10,7 @@ public class kinecttest : MonoBehaviour
     private float timer;
     void Start()
     {
-        //³õÊ¼Ê±¼ÇÂ¼µ±Ç°Î»ÖÃ
+        //åˆå§‹æ—¶è®°å½•å½“å‰ä½ç½®
         lastPosition = transform.position;
     }
 
@@ -19,21 +19,21 @@ public class kinecttest : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        // µ±³¬¹ıÒ»ÃëÊ±£¬¼ì²éÒÆ¶¯·½Ïò
+        // å½“è¶…è¿‡ä¸€ç§’æ—¶ï¼Œæ£€æŸ¥ç§»åŠ¨æ–¹å‘
         if (timer >= checkInterval)
         {
-            // ¼ÆËãÒÆ¶¯·½Ïò
+            // è®¡ç®—ç§»åŠ¨æ–¹å‘
             Vector3 movementDirection = transform.position - lastPosition;
-            if (movementDirection.x < -0.2) // Èç¹ûXÖáÉÏµÄÒÆ¶¯Îª¸ºÖµ£¬±íÊ¾Ïò×óÒÆ¶¯
+            if (movementDirection.x < -0.2) // å¦‚æœXè½´ä¸Šçš„ç§»åŠ¨ä¸ºè´Ÿå€¼ï¼Œè¡¨ç¤ºå‘å·¦ç§»åŠ¨
             {
                 Debug.Log(1);
             }
-            else if (movementDirection.x > 0.2) // Èç¹ûXÖáÉÏµÄÒÆ¶¯ÎªÕıÖµ£¬±íÊ¾ÏòÓÒÒÆ¶¯
+            else if (movementDirection.x > 0.2) // å¦‚æœXè½´ä¸Šçš„ç§»åŠ¨ä¸ºæ­£å€¼ï¼Œè¡¨ç¤ºå‘å³ç§»åŠ¨
             {
                 Debug.Log(0);
             }
 
-            // ¸üĞÂÎ»ÖÃ²¢ÖØÖÃ¼ÆÊ±Æ÷
+            // æ›´æ–°ä½ç½®å¹¶é‡ç½®è®¡æ—¶å™¨
             lastPosition = transform.position;
             timer = 0f;
         }
