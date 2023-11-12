@@ -1838,10 +1838,6 @@ MonoBehaviour:
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 95925701731125530}
   InitPlace: {x: 0, y: 0, z: 0}
-  jumpForce: 0.5
-  directionalLight: {fileID: 0}
-  doubleTapTimeThreshold: 0.01
-  lightBlock: {fileID: 0}
 --- !u!1 &1400737451235372
 GameObject:
   m_ObjectHideFlags: 0
