@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - OnTop
+  - LightBlock
+  - GreyCube
+  - RedCube
   layers:
   - Default
   - TransparentFX

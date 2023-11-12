@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO.Ports;
 using System.IO;
 
-public class ArduinoController : MonoBehaviour
+public class ArduinoController_level02 : MonoBehaviour
 {
     public float moveSpeed = 10.0f; // 横向移动速度
     public float maxUpwardSpeed = 10.0f; // 最大向上速度
@@ -46,16 +46,19 @@ public class ArduinoController : MonoBehaviour
                     {
                         if (arduinoDistance < (previousDistance - distanceThreshold))
                         {
-                            rb.velocity = new Vector2(rb.velocity.x, maxUpwardSpeed);
-                            isJumping = true;
-                            playerAnimator.SetBool("IsClimbing", true);
+                            // rb.velocity = new Vector2(rb.velocity.x, maxUpwardSpeed);
+                            // isJumping = true;
+                            // playerAnimator.SetBool("IsClimbing", true);
 
-                            if (rb.velocity.y > 0 && !isClimbing)
-                            {
-                                playerAnimator.SetBool("IsClimbing", true);
+                            // if (rb.velocity.y > 0 && !isClimbing)
+                            // {
+                            //     playerAnimator.SetBool("IsClimbing", true);
                                 
-                                isClimbing = true;
-                            }
+                            //     isClimbing = true;
+                            // }
+                            
+                            playerController.canMoveVertically = false;
+                            playerController.JumpCoroutine();
                         }
                         else
                         {
@@ -134,6 +137,4 @@ public class ArduinoController : MonoBehaviour
             sp.Close();
         }
     }
-    
-    
 }
