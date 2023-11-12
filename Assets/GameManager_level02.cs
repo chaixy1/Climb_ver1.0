@@ -8,7 +8,7 @@ public class GameManager_level02 : MonoBehaviour
     public GameObject greyCubePrefab;
     public GameObject player;
 
-    public float spawnInterval = 0f;
+    public float spawnInterval = 10f;
     public float cubeSpeed = 10f;
     public float playerSpeed = 1f;
     public float jumpDistance = 1.0f;
@@ -64,7 +64,7 @@ public class GameManager_level02 : MonoBehaviour
         GameObject cubePrefab = Random.value < 0.2f ? redCubePrefab : greyCubePrefab;
 
         // 实例化小方块并设置速度
-        GameObject cube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
+        GameObject cube = Instantiate(cubePrefab, spawnPosition, cubePrefab.transform.rotation);
         cube.GetComponent<Rigidbody>().velocity = Vector3.up * cubeSpeed;
     }
 }

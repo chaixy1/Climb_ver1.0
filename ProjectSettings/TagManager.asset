@@ -9,6 +9,8 @@ TagManager:
   - LightBlock
   - GreyCube
   - RedCube
+  - CinemachineTarget
+  - End
   layers:
   - Default
   - TransparentFX

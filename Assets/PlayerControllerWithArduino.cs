@@ -172,6 +172,29 @@ public class PlayerControllerWithArduino : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("End"))
+        {
+            // 如果碰撞到 End，传送到指定位置
+            TeleportToDestination();
+        }
+    }
+
+    public Transform destinationTransform; // 通过Unity编辑器指定的目标位置
+
+    void TeleportToDestination()
+    {
+        // 在这里添加传送到指定位置的逻辑
+        // 例如，将当前物体的位置设置为目标位置
+        if (destinationTransform != null)
+        {
+            transform.position = destinationTransform.position;
+        }
+        playerAnimator.SetBool("Idle", true);
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+    }
+
     private IEnumerator ResetYVelocityAfterDelay(float delay)
     {
         float elapsedTime = 0f;
