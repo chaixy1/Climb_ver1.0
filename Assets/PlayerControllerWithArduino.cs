@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
 using System.IO;
-
+using UnityEngine.Playables; // For Timeline
+using UnityEngine.SceneManagement; // For scene management
 public class PlayerControllerWithArduino : MonoBehaviour
 {
     public float moveSpeed = 10.0f;
@@ -12,10 +13,10 @@ public class PlayerControllerWithArduino : MonoBehaviour
     private Rigidbody rb;
     private bool isClimbing = false;
     private bool canMoveVertically = true;
-    public float jumpForce = 500f;
+    public float jumpForce = 300f;
     public Light directionalLight;
 
-    private Vector3 gravityForce = new Vector3(0, -1f, 0);
+    public Vector3 gravityForce = new Vector3(0, -2f, 0);
 
     // Arduino Controller
     public SerialPort sp;
@@ -23,10 +24,12 @@ public class PlayerControllerWithArduino : MonoBehaviour
     public int baudRate = 9600;
     public float distanceThreshold = 0.1f;
     private float previousDistance = 0f;
-public kinecttest kinectInput; // 在 Unity 编辑器中设置此引用
-public float bigger = 1.6f;
-   public GameObject uiPanel;
-   public GameObject KinectPlayer;
+    public kinecttest kinectInput; // 在 Unity 编辑器中设置此引用
+    public float bigger = 1.6f;
+    public GameObject uiPanel;
+    public GameObject KinectPlayer;
+    public PlayableDirector director; // Assign this in the inspector
+    public string nextSceneName; // Set the name of the next scene here
 
     void Start()
     {
@@ -37,23 +40,23 @@ public float bigger = 1.6f;
     void Update()
     {
         //float horizontalInput = Input.GetAxis("Horizontal");
-        
+
         // float horizontalInputRaw = kinectInput.GetHorizontalInput();
         // float horizontalInput = horizontalInputRaw * bigger ;
-        
 
-          // 获取 KinectPlayer 的当前位置
-    Vector3 kinectPlayerPosition = KinectPlayer.transform.position;
 
-    // 计算相对于原点的水平偏移
-    float horizontalOffset = kinectPlayerPosition.x;
+        // 获取 KinectPlayer 的当前位置
+        Vector3 kinectPlayerPosition = KinectPlayer.transform.position;
 
-    // 应用这个偏移来控制角色的移动
-    // 你可以根据需要调整偏移量的使用方式
-    float horizontalInput = horizontalOffset * bigger;
-    Debug.Log("horizontalInput: " + horizontalInput);
+        // 计算相对于原点的水平偏移
+        float horizontalOffset = kinectPlayerPosition.x;
+
+        // 应用这个偏移来控制角色的移动
+        // 你可以根据需要调整偏移量的使用方式
+        float horizontalInput = horizontalOffset * bigger;
+        Debug.Log("horizontalInput: " + horizontalInput);
         Vector2 movement = new Vector2(-horizontalInput * moveSpeed, gravityForce.y);
-                
+
 
         if (canMoveVertically)
         {
@@ -105,9 +108,9 @@ public float bigger = 1.6f;
         {
             isClimbing = false;
             playerAnimator.SetBool("IsClimbing", false);
-            
+
         }
-        
+
     }
 
     void JumpWithArduino()
@@ -182,7 +185,7 @@ public float bigger = 1.6f;
             canMoveVertically = false;
             Destroy(other.gameObject);
         }
-        else if(other.CompareTag("LightBlock"))
+        else if (other.CompareTag("LightBlock"))
         {
             if (directionalLight != null)
             {
@@ -198,15 +201,29 @@ public float bigger = 1.6f;
         {
             // 如果碰撞到 End，传送到指定位置
             TeleportToDestination();
+            // 播放 Timeline
+            if (director != null)
+            {
+                director.gameObject.SetActive(true);
+                director.Play();
+                StartCoroutine(WaitForTimeline());
+            }
         }
-        else if(collision.gameObject.CompareTag("Ground"))
+        else if (collision.gameObject.CompareTag("Ground"))
         {
             sp.Close();
             playerAnimator.SetBool("Dead", true); // 假设"Dead"是播放着陆动画的触发器名
             uiPanel.SetActive(true);
         }
     }
+    IEnumerator WaitForTimeline()
+    {
+        // 等待 Timeline 播放完毕
+        yield return new WaitForSeconds((float)director.duration);
 
+        // 跳转到下一场景
+        SceneManager.LoadScene(nextSceneName);
+    }
     public Transform destinationTransform; // 通过Unity编辑器指定的目标位置
 
     void TeleportToDestination()

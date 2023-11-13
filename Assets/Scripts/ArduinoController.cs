@@ -4,6 +4,8 @@ using UnityEngine;
 using System.IO.Ports;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.Playables; // For Timeline
+using UnityEngine.SceneManagement; // For scene management
 
 public class ArduinoController : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class ArduinoController : MonoBehaviour
 
     private bool isJumping = false;
     private bool isClimbing = false;
+    public PlayableDirector director; // Assign this in the inspector
+    public string nextSceneName; // Set the name of the next scene here
 
     private SerialPort sp;
     public string portName = "COM3"; // 串行端口名称
@@ -115,7 +119,23 @@ public class ArduinoController : MonoBehaviour
             // 如果碰撞到 End，传送到指定位置
             TeleportToDestination();
 
+            // 播放 Timeline
+            if (director != null)
+            {
+                director.gameObject.SetActive(true);
+                director.Play();
+                StartCoroutine(WaitForTimeline());
+            }
         }
+    }
+
+    IEnumerator WaitForTimeline()
+    {
+        // 等待 Timeline 播放完毕
+        yield return new WaitForSeconds((float)director.duration);
+
+        // 跳转到下一场景
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public Transform destinationTransform; // 通过Unity编辑器指定的目标位置

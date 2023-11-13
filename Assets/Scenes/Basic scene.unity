@@ -7269,7 +7269,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511907793}
-  m_LocalRotation: {x: -0.0038214517, y: 0.9960254, z: -0.053560592, w: -0.07106463}
+  m_LocalRotation: {x: -0.0052102595, y: 0.9939268, z: -0.054131698, w: -0.09566698}
   m_LocalPosition: {x: -49.55, y: 51.02, z: 12.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7674,6 +7674,7 @@ MonoBehaviour:
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 537159665}
   InitPlace: {x: 0, y: 0, z: 0}
+  doubleTapTimeThreshold: 0.01
 --- !u!136 &537159663
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18270,6 +18271,7 @@ MonoBehaviour:
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 1265942813}
   InitPlace: {x: 0, y: 0, z: 0}
+  doubleTapTimeThreshold: 0.01
 --- !u!136 &1265942811
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23272,7 +23274,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550507192}
-  m_LocalRotation: {x: -0.0038214517, y: 0.9960254, z: -0.053560592, w: -0.07106463}
+  m_LocalRotation: {x: -0.0052102595, y: 0.9939268, z: -0.054131698, w: -0.09566698}
   m_LocalPosition: {x: -49.55, y: 51.02, z: 12.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23965,7 +23967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045599626148158, guid: e38f69a3e6f2b454b8cbdd42fa65d13d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.99
+      value: -51.46
       objectReference: {fileID: 0}
     - target: {fileID: 4045599626148158, guid: e38f69a3e6f2b454b8cbdd42fa65d13d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23973,7 +23975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045599626148158, guid: e38f69a3e6f2b454b8cbdd42fa65d13d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.09
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 4045599626148158, guid: e38f69a3e6f2b454b8cbdd42fa65d13d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30150,6 +30152,7 @@ MonoBehaviour:
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 2116512203}
   InitPlace: {x: 0, y: 0, z: 0}
+  doubleTapTimeThreshold: 0.01
 --- !u!136 &2116512201
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30764,6 +30767,7 @@ MonoBehaviour:
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 95925700796224142}
   InitPlace: {x: 0, y: 0, z: 0}
+  doubleTapTimeThreshold: 0.01
 --- !u!136 &2142499832
 CapsuleCollider:
   m_ObjectHideFlags: 0

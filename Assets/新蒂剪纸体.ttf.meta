@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c12ae2c65d4d98b4c84b0fcb9990ef05
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - SentyPaperCut
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2bb7820c6a1026944900b16cf88c46a5, type: 3}
+  - {fileID: 12800000, guid: fa34b53cc245b9644865594b48d25e3a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
