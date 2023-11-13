@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0.47
   m_LinearFogEnd: 342.14
-  m_AmbientSkyColor: {r: 0.18144062, g: 0.18898252, b: 0.20754719, a: 1}
+  m_AmbientSkyColor: {r: 0.12194731, g: 0.12214565, b: 0.122641504, a: 1}
   m_AmbientEquatorColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
   m_AmbientGroundColor: {r: 0.8018868, g: 0.70876837, b: 0.5182004, a: 1}
   m_AmbientIntensity: 0.7
@@ -4230,6 +4230,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 939157615}
+    - target: {fileID: 3208926421471527081, guid: 97b51870c88debb4d8ec79dd778424fc, type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3208926421471527086, guid: 97b51870c88debb4d8ec79dd778424fc, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -4240,11 +4244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3208926421471527086, guid: 97b51870c88debb4d8ec79dd778424fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.35157
+      value: 42.351566
       objectReference: {fileID: 0}
     - target: {fileID: 3208926421471527086, guid: 97b51870c88debb4d8ec79dd778424fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.089272
+      value: 13.339271
       objectReference: {fileID: 0}
     - target: {fileID: 3208926421471527086, guid: 97b51870c88debb4d8ec79dd778424fc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4758,7 +4762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511907793}
   m_LocalRotation: {x: -0.0053540636, y: 0.99821585, z: 0.04227286, w: 0.04182729}
-  m_LocalPosition: {x: -51.870537, y: 42.35157, z: 14.089272}
+  m_LocalPosition: {x: -51.870537, y: 42.351566, z: 13.339271}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8682,8 +8686,9 @@ MonoBehaviour:
   moveSpeed: 3
   maxUpwardSpeed: 5
   playerAnimator: {fileID: 939157614}
-  jumpForce: 300
+  jumpForce: 100
   directionalLight: {fileID: 0}
+  gravityForce: {x: 0, y: -1, z: 0}
   portName: COM3
   baudRate: 9600
   distanceThreshold: 0.1
@@ -8692,7 +8697,7 @@ MonoBehaviour:
   uiPanel: {fileID: 0}
   KinectPlayer: {fileID: 257586201}
   director: {fileID: 7833174665175900360}
-  nextSceneName: Basic scene1
+  nextSceneName: act3
   destinationTransform: {fileID: 1971445215}
 --- !u!114 &939157625
 MonoBehaviour:
@@ -8711,7 +8716,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 939157614}
   InitPlace: {x: 0, y: 0, z: 0}
   canMoveVertically: 1
-  jumpForce: 500
+  jumpForce: 200
   directionalLight: {fileID: 0}
 --- !u!1001 &940336954
 PrefabInstance:
@@ -15161,6 +15166,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1403329878}
   jumpForce: 500
   directionalLight: {fileID: 0}
+  gravityForce: {x: 0, y: -1, z: 0}
   portName: COM3
   baudRate: 9600
   distanceThreshold: 0.1
@@ -17050,7 +17056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045599626148158, guid: e38f69a3e6f2b454b8cbdd42fa65d13d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.47
+      value: 8.72
       objectReference: {fileID: 0}
     - target: {fileID: 4045599626148158, guid: e38f69a3e6f2b454b8cbdd42fa65d13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
